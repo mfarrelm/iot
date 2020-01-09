@@ -1,0 +1,133 @@
+<html>
+ <head>
+    <title>TF4061 - Industrial Internet of Things</title>
+    <link rel="stylesheet" href="css/style.css">
+    <script src="/mqtt.js"></script>
+    <script type="text/javascript" src="script/plotly-1.49.0.min.js" charset="utf-8"></script>
+    <script type="text/javascript" src="script/jquery.min.js" charset="utf-8"></script>
+    <link href="https://fonts.googleapis.com/css?family=Source+Sans+Pro&display=swap" rel="stylesheet">
+    <script src="https://kit.fontawesome.com/e8a5023112.js"></script>
+
+ </head>
+ <body>
+
+    <ul>
+        <li>Tugas Tengah Semester TF4061 - Industrial Internet of Things</li>
+    </ul>
+
+    <button type="button" class="collapsible">Actual Data</button>
+      <div class="content">
+        <section class="sectgauge">
+          <p class="container_title">Actual Data</p>
+          <div class="gauge_container">
+            <div class = "gauge_graph" id = "gauge1"></div>
+            <div class = "gauge_graph" id = "gauge2"></div>
+            <div class = "gauge_graph" id = "gauge3"></div>
+          </div>
+
+        </section>
+
+
+        <section class="sectgrafik">
+          <div class="graph">
+              <canvas id="canvas1"></canvas>
+          </div>
+          <div class="graph">
+              <canvas id="canvas2"></canvas>
+          </div>
+          <div class="graph">
+              <canvas id="canvas3"></canvas>
+          </div>
+          <p class = "container_title">Nilai Rata - Rata</p>
+          <div class="sensors_container">
+              <div id="humidity" class="sensors">
+                  <p class="sensors_title">Humidity</p>
+                  <div class="sensors_value">
+                      <p class="sensors_number" id="humidity_rata">3000</p><p style="display:inline"> %</p>
+                  </div>
+              </div>
+              <div id="temperature" class="sensors">
+                  <p class="sensors_title">Temperature</p>
+                  <div class="sensors_value">
+                      <p class="sensors_number" id="temperature_rata">3000</p><p style="display:inline"> C</p>
+
+                  </div>
+              </div>
+              <div id="brightness" class="sensors">
+                  <p class="sensors_title">Brightness</p>
+                  <div class="sensors_value">
+                      <p class="sensors_number" id="brightness_rata">3000</p><p style="display:inline"> lx</p>
+                  </div>
+              </div>
+          </div>
+        </section>
+      </div>
+
+
+    <button type="button" class="collapsible">Kontrol</button>
+      <div class="content">
+        <div class="block">
+          <div class="container">
+            <p class="container_title"> Indicator </p>
+            <button class = "button" onclick="turnLED()" id = "led_id">OFF</button>
+            <button class = "button" onclick="changeLEDMode()" id = led_mode>Manual</button>
+            <div id="slider_container">
+            <div> Red </div>
+            <div class="slidecontainer">
+              <input type="range" min="0" max="255" value="128" class="slider" id="slider_red">
+            </div>
+            <div> Green</div>
+            <div class="slidecontainer">
+              <input type="range" min="0" max="255" value="128" class="slider" id="slider_green">
+            </div>
+            <div> Blue</div>
+            <div class="slidecontainer">
+              <input type="range" min="0" max="255" value="128" class="slider" id="slider_blue">
+            </div>
+            </div>
+          </div>
+          <div class="container">
+            <p class="container_title">Nilai Ambang Batas</p>
+            <div> Humidity</div> <input type="number" id="batasHum" value="0">
+            <div> Temperature</div> <input type="number" id="batasTemp" value="0">
+            <div> Brightness</div> <input type="number" id="batasBright" value="0">
+            <div> <button class = "button" onclick="updateBatas()">OK</button> </div>
+          </div>
+          <div class="container">
+            <p class="container_title">Alarm</p>
+            <div class="alarm_container">
+              <div>
+                <div> Humidity</div>
+                <div id="alarm_hum" class="indicators"></div>
+              </div>
+              <div>
+                <div> Temperature</div>
+                <div id="alarm_temp" class="indicators"></div>
+              </div>
+              <div>
+                <div> Brightness</div>
+                <div id="alarm_bright" class="indicators"></div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+
+
+
+
+
+
+
+
+    <script type="text/javascript" src="script/Chart.min.js" charset="utf-8"></script>
+    <script type="text/javascript" src="script/utils.js" charset="utf-8"></script>
+    <script type="text/javascript" src="script/script.js" charset="utf-8"></script>
+
+
+    <ul>13317025 - 13317027 - 13317037</ul>
+
+
+ </body>
+</html>

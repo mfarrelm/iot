@@ -1,0 +1,80 @@
+<html>
+ <head>
+    <title>TF4061 - Industrial Internet of Things</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <link rel="stylesheet" href="css/bootstrap.min.css">
+    <link rel="stylesheet" href="css/style.css">
+    <script src="script/jquery-3.4.1.min.js"></script>
+    <script src="script/bootstrap.min.js"></script>
+    <script src="script/mqtt.js"></script>
+
+ </head>
+ <body>
+     <div id="header">
+
+      <!-- menu keluar sesuai otentifikasi -->
+      <div id="menu"></div>
+      <script src="script/auth-menu.js"></script>
+      <script>auth_page('supervise','menu')</script>
+    </div>
+
+    <div class="container">
+        <div class="row">
+          <div id="col-left" class="col-sm-8">
+              <p class="container_title"> Grafik </p>
+              <div class="graph">
+                  <canvas id="e-chart" width="100%"></canvas>
+              </div>
+
+              <div class="container_ind">
+                <p class="container_title"> Indicator </p>
+                <button class = "button" onclick="changeLEDMode()" id = led_mode>Manual</button>
+                <div id="slider_container">
+                <div id="red_slider"> Red </div>
+                <div class="slidecontainer">
+                  <input type="range" min="0" max="255" value="128" class="slider" id="slider_red">
+                </div>
+                <div id="green_slider"> Green</div>
+                <div class="slidecontainer">
+                  <input type="range" min="0" max="255" value="128" class="slider" id="slider_green">
+                </div>
+                <div id="blue_slider"> Blue</div>
+                <div class="slidecontainer">
+                  <input type="range" min="0" max="255" value="128" class="slider" id="slider_blue">
+                </div>
+                </div>
+              </div>
+
+
+              <div class="container_ind">
+                <p class="container_title">Nilai Ambang Batas</p>
+                 <input type="number" id="CC" value="0">
+                <div> <button class = "button" onclick="updateBatas()">OK</button> </div>
+              </div>
+
+              <div class="container_ind ">
+                <p class="container_title">Banyak Data</p>
+                 <input type="number" id="len_data" value="10">
+                <div> <button class = "button" onclick="updateLEN_data()">OK</button> </div>
+              </div>
+
+          </div>
+          <div id="col-right_1" class="col-sm-4">
+              <div id="e-nodes"></div>
+              <div id="e-tags"></div>
+          </div>
+        </div>
+    </div>
+
+
+    <div id="footer">
+      13317025 - 13317027 - 13317037
+    </div>
+
+    <script type="text/javascript" src="script/Chart.min.js" charset="utf-8"></script>
+    <script type="text/javascript" src="script/utils.js" charset="utf-8"></script>
+    <script type="text/javascript" src="script/script-sup.js" charset="utf-8"></script>
+ </body>
+</html>

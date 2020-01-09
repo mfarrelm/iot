@@ -1,0 +1,51 @@
+<html>
+<head>
+    <title>TF4061 - Industrial Internet of Things</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <link rel="stylesheet" href="css/bootstrap.css">
+    <link rel="stylesheet" href="css/dataTables.bootstrap4.min.css">
+    <link rel="stylesheet" href="css/style.css">
+
+    <script src="script/jquery-3.4.1.min.js"></script>
+    <script src="script/bootstrap.min.js"></script>
+    <script src="script/mqtt.js"></script>
+    <script src="script/helper.js"></script>
+
+    <script src="script/jquery.dataTables.min.js"></script>
+    <script src="script/dataTables.bootstrap4.min.js"></script>
+
+</head>
+<body>
+    <ul class="header">
+        <li><img src="img/Logo_ITB.png" id="logo_itb"/></li>
+        <li>TF4061 - Industrial Internet of Things</li>
+    </ul>
+
+    <!-- menu keluar sesuai otentifikasi -->
+    <div id=menu></div>
+    <script src="script/auth-menu.js"></script>
+    <script>auth_page('configure','menu')</script>
+
+    <div style="padding: 2em; background: whitesmoke; margin:2em" >
+        <table id="myTable" class="table table-striped table-bordered"></table>
+    </div>
+
+    <script>
+        var tag_id = new URL(window.location.href).searchParams.get('tag'); //get param
+
+        $('#myTable').DataTable({
+            ajax: {
+                url: '/api/data/'+tag_id,
+                dataSrc: ''
+            },
+            columns: [
+                { title: "dtime", data: "DTIME" },
+                { title: "value", data: "VALUE" },
+            ]
+        });
+    </script>
+
+</body>
+</html>

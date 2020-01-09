@@ -1,0 +1,40 @@
+<html>
+ <head>
+    <title>TF4061 - Industrial Internet of Things</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <link rel="stylesheet" href="css/bootstrap.min.css">
+    <link rel="stylesheet" href="css/style.css">
+    <script src="script/jquery-3.4.1.min.js"></script>
+    <script src="script/bootstrap.min.js"></script>
+    <script src="script/helper.js"></script>
+
+ </head>
+ <body>
+
+    <!-- menu keluar sesuai otentifikasi -->
+    <div id=menu></div>
+    <script src="script/auth-menu.js"></script>
+    <script>auth_page("",'menu')</script>
+
+    <p class="container_title">Profile</p>
+
+    <div class = "config" style="padding: 2em; margin:2em; text-align: center">
+        <table class="table table-striped table-bordered" style="width: 50%; margin: auto">
+            <tr><td>Nama</td><td><span id="nama">nama</span></td></tr>
+            <tr><td>Username</td><td><span id="username">username</span></td></tr>
+            <tr><td>Password</td><td><span id="password">password</span></td></tr>
+            <tr><td></td><td><button class="btn btn-danger" onclick="logout()">Logout</button></tr>
+        </table>
+    </div>
+
+    <script>
+        var dataLogin = JSON.parse(localStorage.getItem("login"));
+        document.getElementById('nama').innerHTML = dataLogin.name;
+        document.getElementById('username').innerHTML = dataLogin.username;
+        document.getElementById('password').innerHTML = dataLogin.password;
+    </script>
+
+</body>
+</html>

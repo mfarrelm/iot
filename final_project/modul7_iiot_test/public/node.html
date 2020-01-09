@@ -1,0 +1,51 @@
+<!-- HTML MENAMPILKAN 1 NODE -->
+<html>
+ <head>
+    <title>TF4016 - Industrial Internet of Things</title>
+    <link rel="stylesheet" href="css/style.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <script src="/mqtt.js"></script>
+ </head>
+ <body>
+    <ul>
+        <li><img src="https://upload.wikimedia.org/wikipedia/id/9/95/Logo_Institut_Teknologi_Bandung.png" id="logo_itb"/></li>
+        <li>TF4061 - Industrial Internet of Things</li>
+    </ul>
+    <p class="container_title">SENSOR</p>
+    <div class="sensors_container">
+        <div id="humidity" class="sensors">
+            <p class="sensors_title">TT991</p>
+            <div class="sensors_value">
+                <p class="sensors_number" id="TF-IIOT/NODE#99/TT/991">000</p>
+                <p style="display:inline"> C</p>
+            </div>
+        </div>
+        <div id="temperature" class="sensors">
+            <p class="sensors_title">TT981</p>
+            <div class="sensors_value">
+                <p class="sensors_number" id="TF-IIOT/NODE#98/TT/981">000</p>
+                <p style="display:inline"> C</p>
+            </div>
+        </div>
+        <div id="brightness" class="sensors">
+            <p class="sensors_title">TT971</p>
+            <div class="sensors_value">
+                <p class="sensors_number" id="TF-IIOT/NODE#97/TT/971">000</p>
+                <p style="display:inline"> C</p>
+            </div>
+        </div>
+        <div class="ledstatus">
+            <p class="container_title">LED STATUS</p>
+            <div id="TF-IIOT/NODE#99/YY/991" class="indicators" onclick="onClickYY()">YT991</div>
+            <div id="TF-IIOT/NODE#98/YY/981" class="indicators" onclick="onClickYY()">YT981</div>
+            <div id="TF-IIOT/NODE#97/YY/971" class="indicators" onclick="onClickYY()">YT971</div>
+        </div>
+    </div>
+    <div class="graph">
+        <canvas id="canvas"></canvas>
+    </div>
+    <script type="text/javascript" src="script/Chart.min.js" charset="utf-8"></script>
+    <script type="text/javascript" src="script/utils.js" charset="utf-8"></script>
+    <script type="text/javascript" src="script/script.js" charset="utf-8"></script>
+ </body>
+</html>

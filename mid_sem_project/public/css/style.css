@@ -1,0 +1,273 @@
+body {
+
+    background: linear-gradient(to bottom,#DECBA4 0%,#3E5151 100%);
+    /* background: url('https://www.setaswall.com/wp-content/uploads/2017/08/1440x2960-HD-Wallpaper-087.jpg'); */
+    background-size: cover;
+
+    font-family: "Helvetica";
+    text-align: center;
+    color: black;
+    margin: 10;
+}
+
+h1 {
+    text-align:center;
+}
+
+p {
+    text-align: center;
+    color: black;
+    vertical-align: middle;
+}
+
+ul {
+    list-style-type: none;
+    margin-bottom: 30px;
+    margin-top: 30px;
+    padding: 10px 1px;
+    width: 100%;
+    text-align: center;
+    color: black;
+}
+
+li {
+
+    font-size: 30;
+    font-weight: bold;
+    display: inline-block;
+    vertical-align: middle;
+    font-style : italic;
+    padding-bottom:16px;
+
+}
+
+#logo_itb {
+    margin: 7.5px;
+    height: 45px;
+    display: inline-block;
+    margin-right: 15px;
+}
+
+.button{
+  background: transparent;
+  margin: 10px;
+}
+.ledstatus {
+    width: 360px;
+    margin: auto;
+}
+
+.container_title {
+    font-weight: bold;
+    font-size: 20pt;
+    margin: 0px auto;
+    margin-bottom: 0px;
+    padding: 25px;
+    border-top: solid;
+    border-top-width: 5px;
+    border-top-color: white;
+    border-bottom: solid;
+    border-bottom-width: 5px;
+    border-bottom-color: brown;
+}
+
+.collapsible {
+  background-color: #848674;
+  color: white;
+  cursor: pointer;
+  padding: 18px;
+  width: 100%;
+  border: none;
+  text-align: center;
+  outline: none;
+  font-size: 32px;
+}
+
+.active, .collapsible:hover {
+  background-color: #555;
+}
+
+.content {
+  padding: 0 18px;
+  display: none;
+  overflow: hidden;
+  background-color: transparent;
+  margin: 20px;
+}
+
+.indicators {
+    display: table-cell;
+    border-style: solid;
+    border-width: 4px;
+    border-radius: 50%;
+    width: 90px;
+    height: 90px;
+    vertical-align: middle;
+    background-color: rgb((231, 76, 60));
+    margin : auto;
+}
+
+#dashboard {
+    background-color: white;
+    width:900px;canvas
+    padding: 10px;
+    margin:auto;
+}
+
+.sensors_container {
+    width: 500px;
+    margin: auto;
+    text-align: center;
+    overflow: auto;
+    display: flex;
+    align-items: center;
+    margin-top: 30px;
+}
+
+.alarm_container{
+  width: 100px;
+  margin: auto;
+  text-align: center;
+  overflow: auto;
+  display: inline-block;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.block{
+  border-style: outset;
+  border-width: 15px;
+}
+
+.container{
+
+  border-style: transparent;
+  border-color: #a7a187;
+  padding: 10;
+  width: auto;
+  height: auto;
+  margin: auto;
+  text-align: center;
+  overflow: auto;
+  display:inline-table;
+}
+
+.sensors {
+    border-style: solid;
+    border-width:3px;
+    border-color:gold;
+    padding: 0;
+    width: 150px;
+    height: 100px;
+    margin: auto;
+    display: inline-block;
+    color: Black;
+    overflow: hidden;
+}
+
+.sensors_title {
+    color: Black;
+    display: table-cell;
+    vertical-align: middle;
+    font-family: 'Helvetica';
+    font-size: 15pt;
+    width: 150px;
+    padding: 10px 0;
+    background-color: silver;
+    margin: 0;
+}
+
+.sensors_value {
+    font-size: 20pt;
+    display: table-cell;
+    font-family: 'Helvetica','Arial',sans-serif;
+    display: inline-block;
+    margin-top: 15px;
+    text-align: center;
+    vertical-align: middle;
+}
+
+.sensors_number {
+    display: inline;
+}
+
+.graph {
+    margin: 2% auto;
+    background-color:rgba(255,255,255,0.5);
+    border-radius: 20px;
+    padding: 10px;
+    width: 30%;
+    color: white;
+    align-items: center;
+    display: inline-table;
+}
+
+
+.gauge{
+  border-radius: 10px;
+}
+
+.gauge_container
+{
+    text-align: center;
+    margin: auto;
+    width: 100%;
+    display :inline-flex;
+    justify-content: space-around;
+
+}
+
+.slidecontainer {
+  width: 100%; /* Width of the outside container */
+  margin: auto;
+  text-align: center;
+}
+
+/* The slider itself */
+.slider {
+  -webkit-appearance: none;  /* Override default CSS styles */
+  appearance: none;
+  width: 100%; /* Full-width */
+  height: 25px; /* Specified height */
+  background: #d3d3d3; /* Grey background */
+  outline: none; /* Remove outline */
+  opacity: 0.7; /* Set transparency (for mouse-over effects on hover) */
+  -webkit-transition: .2s; /* 0.2 seconds transition on hover */
+  transition: opacity .2s;
+}
+
+/* Mouse-over effects */
+.slider:hover {
+  opacity: 1; /* Fully shown on mouse-over */
+}
+
+/* The slider handle (use -webkit- (Chrome, Opera, Safari, Edge) and -moz- (Firefox) to override default look) */
+.slider::-webkit-slider-thumb {
+  -webkit-appearance: none; /* Override default look */
+  appearance: none;
+  width: 25px; /* Set a specific slider handle width */
+  height: 25px; /* Slider handle height */
+  background: #4CAF50; /* Green background */
+  cursor: pointer; /* Cursor on hover */
+}
+
+.slider::-moz-range-thumb {
+  width: 25px; /* Set a specific slider handle width */
+  height: 25px; /* Slider handle height */
+  background: #4CAF50; /* Green background */
+  cursor: pointer; /* Cursor on hover */
+}
+
+/*
+.sectgrafik{
+  background-color: #37edea;
+}
+
+.sectrata{
+  background-color: #b28be8;
+}
+
+.sectgauge{
+  background-color: #eb1e88;
+}
+*/
